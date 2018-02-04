@@ -354,10 +354,16 @@ declare namespace HAPNodeJS {
         }
     }
 
+    export interface Bridge extends Accessory {
+        new (displayName: string, UUID: string): Bridge;
+        setupURI(): string;
+    }
+
     export interface HAPNodeJS {
         init(storagePath?: string): void,
         uuid: uuid,
         Accessory: Accessory,
+        Bridge: Bridge,
         Service: any,
         Characteristic: any
     }
